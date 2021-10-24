@@ -45,29 +45,6 @@ Para a execução local da Wiki do projeto serão necessárias as seguintes depe
   cd ~/Eletronica-Embarcado/Eletronica-Embarcado/simulation_ws
   catkin_make
 ```
-### Execução
-
-Para executar o repositório de documentação é necessários os seguintes passos:
-
-```bash
-# 1. Clone o repositório atual
-$ git clone https://github.com/fga-eps-mds/2021.1-Cartografia-social-docs
-
-# 2. Entre na página src do repositório
-$ cd 2021.1-Cartografia-social-docs/src/
-
-# 3. Install as dependências
-$ npm install
-
-# 4. Execute o projeto
-$ npm run dev
-```
-
-Após a execução dos passos anteriores, o projeto de documentação será servido localmente, podendo, em geral, ser acessado através da URL:
-
-```http
-http://localhost:8080/2021.1-Cartografia-social-docs/
-```
 
 ## [**Guia de Contribuição**](#Sumário)
 
