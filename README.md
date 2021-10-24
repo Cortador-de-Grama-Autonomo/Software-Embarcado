@@ -93,3 +93,40 @@ As issues devem ser criadas conforme template predefinido, contendo:
 
 * ***Estimate*** - As issues devem ser pontuadas conforme seu grau de dificuldade;
 
+#### **Nomenclatura**
+
+A Nomenclatura das issues deve seguir o padrão:
+
+```
+[PREFIXO] Breve descrição da issue em português
+```
+
+De forma que o elemento **PREFIXO** siga o seguinte padrão
+
+| Prefixo | Tema | Exemplo |
+| --- | --- | --- |
+| DOCS | Documentação | `[DOCS] Melhorar README`|
+| DEVOPS | Integração, DevOps | `[DEVOPS] Implementar CI/CD`|
+| USXX | História de Usuário, em que *XX* se refera ao número da história de usuário | `[US12] Enviar dados de mapeamento para gateway`|
+| IMPROVE | Melhoria ou adição de funcionalidades não correlacionadas a uma História de Usuário | `[IMPROVE] Adiciona regras de mapeamento no frontend`|
+
+
+
+### [**Branches**](#Sumário)
+
+Para a padronização das branches foi tomada uma adaptação do modelo padrão do [gitflow](https://nvie.com/posts/a-successful-git-branching-model/) conforme representado pelo diagrama abaixo:
+
+![gitflow-adapted](./images/gitflow_adapted_tag.png)
+
+Esse modelo segue a seguinte categorização para as respectivas branches:
+
+* ***Main*** - A Branch *Main* contém o histórico oficial do código ou projeto em questão, sendo assim a versão do código que estará em produção no ciclo de vida do projeto.
+
+* ***Hotfix*** - As Branches *Hotfix* servem para manutenção ou correção de forma rápida dos lançamentos em produção, feitas a partir da *Main* para uma integração mais rápida.
+
+* ***Develop*** - A Branch *Develop* serve como uma ramificação para integração de recursos, sendo a versão do projeto disponível no ambiente de Homologação.
+
+* ***Feature*** - As Branches de *Feature* servem para a realização de novas adições e funcionalidades para o projeto, sendo criadas a partir da branch *develop* para serem integradas a essa branch à medida que a *feature* (ou funcionalidade) em questão é concluída. Essas funcionalidades representam novas adições ao projeto em si, através da inserção de códigos.
+
+* ***Support*** - As Branches *Support* servem para armazenar modificações que integram o projeto mas não representam funcionalidades (ou *features*), como documentação, Integração Contínua, Deploy Contínuo e demais configurações focadas na estrutura do projeto.
+
