@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Catkin_ws build modules
+catkin_ws/build/*
+catkin_ws/devel/*
+
+# Simulation_ws build modules
+simulation_ws/build/*
+simulation_ws/devel/*

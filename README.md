@@ -46,6 +46,38 @@ Para a execução local da Wiki do projeto serão necessárias as seguintes depe
   catkin_make
 ```
 
+Os arquivos criados pelos comandos anteriores serão
+
+***Catkin_ws***
+- catkin_ws/build/
+- catkin_ws/devel/
+
+***Simulation_ws***
+- smilation_ws/build/
+- smilation_ws/devel/
+
+### Execução
+
+```bash
+# Executar o ambiente de simulação do Gazebo
+ $ cd simulation_ws
+ $ source devel/setup.zsh
+ $ roslaunch worlds world.launch
+
+# Executar o carrinho no ambiente do Gazebo
+ $ cd simulation_ws
+ $ source devel/setup.zsh
+ $ roslaunch cortador_description spawn.launch
+
+# Executar o carrinho no ambiente do Gazebo
+ $ cd catkin_ws
+ $ source devel/setup.zsh
+ $ rosrun controle_locomocao obstacle_avoidance.py
+
+# Para identificar os tópicos do ROS
+ $ rostopic list
+```
+
 ## [**Guia de Contribuição**](#Sumário)
 
 Para a contribuição e evolução das informações presentes nesse repositório, o seguinte guia de contribuição foi criado, especificando instruções de uso e dos padrões utilizados.
