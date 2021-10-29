@@ -1,5 +1,7 @@
 <launch>
     <arg name="scan_topic"  default="/cortador/laser/scan" />
+    <arg name="scan_right_topic"  default="/cortador/laser/scan_right" />
+    <arg name="scan_left_topic"  default="/cortador/laser/scan_left" />
     <arg name="base_frame"  default="chassis"/>
     <arg name="odom_frame"  default="odom_link"/>
   
@@ -49,5 +51,7 @@
       <param name="lasamplerange" value="0.005"/>
       <param name="lasamplestep" value="0.005"/>
       <remap from="scan" to="$(arg scan_topic)"/>
+      <remap from="scan" to="$(arg scan_right_topic)"/>
+      <remap from="scan" to="$(arg scan_left_topic)"/>
     </node>
   </launch>

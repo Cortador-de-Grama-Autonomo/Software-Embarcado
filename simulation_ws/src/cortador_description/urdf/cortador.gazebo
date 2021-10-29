@@ -57,7 +57,7 @@
   </gazebo>
   
   <gazebo reference="sensor_link_right">
-    <sensor type="ray" name="sonar">
+    <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
       <update_rate>20</update_rate>
@@ -71,24 +71,25 @@
           </horizontal>
         </scan>
         <range>
-          <min>0.01</min>
+          <min>0.2</min>
           <max>4.0</max>
-          <resolution>0.01</resolution>
+          <resolution>0.2</resolution>
         </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
       </ray>
-      <plugin name="gazebo_ros_range" filename="libgazebo_ros_range.so">
-            <gaussianNoise>0.005</gaussianNoise>
-            <alwaysOn>true</alwaysOn>
-            <topicName>/cortador/sonar/scan_right</topicName>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+            <topicName>/cortador/laser/scan_right</topicName>
             <frameName>sensor_link_right</frameName>
-            <fov>0.5</fov>
-            <radiation>ultrasound</radiation>
       </plugin>
     </sensor>
   </gazebo>
   
    <gazebo reference="sensor_link_left">
-    <sensor type="ray" name="sonar">
+    <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
       <update_rate>20</update_rate>
@@ -102,18 +103,19 @@
           </horizontal>
         </scan>
         <range>
-          <min>0.01</min>
+          <min>0.2</min>
           <max>4.0</max>
-          <resolution>0.01</resolution>
+          <resolution>0.2</resolution>
         </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
       </ray>
-      <plugin name="gazebo_ros_range" filename="libgazebo_ros_range.so">
-            <gaussianNoise>0.005</gaussianNoise>
-            <alwaysOn>true</alwaysOn>
-            <topicName>/cortador/sonar/scan_left</topicName>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+            <topicName>/cortador/laser/scan_left</topicName>
             <frameName>sensor_link_left</frameName>
-            <fov>0.5</fov>
-            <radiation>ultrasound</radiation>
       </plugin>
     </sensor>
   </gazebo>
